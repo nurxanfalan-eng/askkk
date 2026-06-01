@@ -244,17 +244,17 @@ function sendToWhatsApp() {
 
   /* Compose a rich text message that mirrors the postcard */
   const msg =
-`💌✨ *Sevgili Dəvətnamə* ✨💌
+`💌✨ *Bu Bir Davet* ✨💌
 
-Salam, əzizim! 🌸
+Selam, Fıstık! 🌸
 Seninle görüşmek istiyorum...
 
 📅 *Tarix:* ${fmt}
 🕐 *Vaxt:* ${time}
 🍽️ *Fəaliyyət:* ${act}
 
-Səni çox sevirəm! 💖
-Sənin üçün xüsusi...
+Seni Çok Seviyorum! 💖
+Senin için Özel...
 
 💗 💗 💗`;
 
