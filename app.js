@@ -201,9 +201,9 @@ document.getElementById('nextMonth').addEventListener('click', () => {
    =================================================== */
 const TIME_LABELS = {
   sabah:   '🌅 Sabah',
-  gunorta: '☀️ Günorta',
-  axsam:   '🌆 Axşam',
-  gece:    '🌙 Gecə'
+  gunorta: '☀️ Öğleden Sonra',
+  axsam:   '🌆 Akşam',
+  gece:    '🌙 Gece'
 };
 
 function selectTime(btn) {
@@ -258,16 +258,16 @@ Sənin üçün xüsusi...
 
 💗 💗 💗`;
 
-function sendToWhatsApp() {
-  const msg = "Salam bu test mesajdır";
+  const phone   = '994506001209';
   const encoded = encodeURIComponent(msg);
+  const url     = `https://wa.me/${phone}?text=${encoded}`;
 
-  // Bu link kontakt seçmə rejimidir
-  const url = "https://api.whatsapp.com/send?text=" + encoded;
-
+  /* Open WhatsApp directly – most reliable cross-platform method */
   window.open(url, '_blank');
-}
 
+  /* Show confirmation page */
+  setTimeout(() => switchPage('page4', 'page5'), 600);
+}
 
 /* ===================================================
    RESET
