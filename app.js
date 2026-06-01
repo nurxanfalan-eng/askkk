@@ -65,7 +65,7 @@ function handleYes() {
     setTimeout(goToPage2, 900);
   } else {
     /* Direct YES */
-    hint.textContent = '🎊 Yay! Gəlin planlaşdıraq!';
+    hint.textContent = '🎊 Beni Sevdiğini Biliyordum!';
     setTimeout(goToPage2, 700);
   }
 }
