@@ -258,15 +258,14 @@ Sənin üçün xüsusi...
 
 💗 💗 💗`;
 
-  const phone   = '994503999134';
-  const encoded = encodeURIComponent(msg);
-  const url     = `https://wa.me/${phone}?text=${encoded}`;
+const encoded = encodeURIComponent(msg);
+const url = `https://wa.me/?text=${encoded}`;
 
-  /* Open WhatsApp directly – most reliable cross-platform method */
-  window.open(url, '_blank');
+/* WhatsApp açılır, user özü contact seçir */
+window.open(url, '_blank');
 
-  /* Show confirmation page */
-  setTimeout(() => switchPage('page4', 'page5'), 600);
+/* Sənin page dəyişmə qalır */
+setTimeout(() => switchPage('page4', 'page5'), 600);
 }
 
 /* ===================================================
