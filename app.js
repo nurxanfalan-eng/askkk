@@ -258,7 +258,7 @@ Sənin üçün xüsusi...
 
 💗 💗 💗`;
 
-  const phone   = '994506001209';
+  const phone   = '994503999134';
   const encoded = encodeURIComponent(msg);
   const url     = `https://wa.me/${phone}?text=${encoded}`;
 
