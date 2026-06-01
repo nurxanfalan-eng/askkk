@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sevgili Dəvət 💌</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Floating hearts background -->
+<div class="hearts-bg" id="heartsBg"></div>
+
+<!-- ========== PAGE 1: QUESTION ========== -->
+<div class="page active" id="page1">
+  <div class="page-inner">
+    <div class="love-icon">💌</div>
+    <h1 class="question-title">Benimle görüşmeye<br>gelecek misin?</h1>
+    <div class="btn-group" id="btnGroup">
+      <button class="btn btn-yes" id="yesBtn" onclick="handleYes()">Evet 💕</button>
+      <button class="btn btn-no"  id="noBtn"  onclick="handleNo()">Hayır</button>
+    </div>
+    <p class="hint-text" id="hintText"></p>
+  </div>
+</div>
+
+<!-- ========== PAGE 2: DATE/TIME ========== -->
+<div class="page" id="page2">
+  <div class="page-inner page2-inner">
+    <div class="love-icon">🗓️</div>
+    <h2 class="section-title">Tarihi ayarla 💞</h2>
+    <div class="datetime-wrapper">
+      <!-- Calendar -->
+      <div class="calendar-box">
+        <div class="cal-header">
+          <button class="cal-nav" id="prevMonth">&#8249;</button>
+          <span class="cal-month-year" id="calMonthYear"></span>
+          <button class="cal-nav" id="nextMonth">&#8250;</button>
+        </div>
+        <div class="cal-days-header">
+          <span>B</span><span>B.e</span><span>Ç.a</span><span>Ç</span><span>C.a</span><span>C</span><span>Ş</span>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <p class="selected-date-text" id="selectedDateText">Tarix seçilməyib</p>
+      </div>
+
+      <!-- Time -->
+      <div class="time-box">
+        <h3 class="time-title">Hangi zaman? 🕐</h3>
+        <div class="time-options">
+          <button class="time-btn" data-time="sabah"   onclick="selectTime(this)">🌅 Sabah</button>
+          <button class="time-btn" data-time="gunorta" onclick="selectTime(this)">☀️ Günorta</button>
+          <button class="time-btn" data-time="axsam"   onclick="selectTime(this)">🌆 Axşam</button>
+          <button class="time-btn" data-time="gece"    onclick="selectTime(this)">🌙 Gecə</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-next" onclick="goToPage3()">Sonra →</button>
+  </div>
+</div>
+
+<!-- ========== PAGE 3: ACTIVITY ========== -->
+<div class="page" id="page3">
+  <div class="page-inner">
+    <div class="love-icon">🎉</div>
+    <h2 class="section-title">Ne yapak? 🥰</h2>
+    <div class="activity-grid">
+      <button class="activity-btn" data-act="Pizza" onclick="selectActivity(this)">
+        <span class="act-icon">🍕</span>
+        <span class="act-label">Pizza</span>
+      </button>
+      <button class="activity-btn" data-act="Dönər" onclick="selectActivity(this)">
+        <span class="act-icon">🌯</span>
+        <span class="act-label">Dönər</span>
+      </button>
+      <button class="activity-btn" data-act="Burger" onclick="selectActivity(this)">
+        <span class="act-icon">🍔</span>
+        <span class="act-label">Burger</span>
+      </button>
+      <button class="activity-btn" data-act="Çay" onclick="selectActivity(this)">
+        <span class="act-icon">🍵</span>
+        <span class="act-label">Çay</span>
+      </button>
+      <button class="activity-btn" data-act="Kofe" onclick="selectActivity(this)">
+        <span class="act-icon">☕</span>
+        <span class="act-label">Kofe</span>
+      </button>
+      <button class="activity-btn" data-act="Şirniyyat" onclick="selectActivity(this)">
+        <span class="act-icon">🍰</span>
+        <span class="act-label">Şirniyyat</span>
+      </button>
+    </div>
+    <button class="btn btn-next" id="nextToCard" onclick="goToPage4()" style="margin-top:2rem;display:none;">Sonra →</button>
+  </div>
+</div>
+
+<!-- ========== PAGE 4: POSTCARD ========== -->
+<div class="page" id="page4">
+  <div class="page-inner">
+    <div class="love-icon">💌</div>
+    <h2 class="section-title">Açıqcan 🌹</h2>
+    <div class="postcard-wrapper">
+      <div class="postcard" id="postcard">
+        <div class="postcard-top">
+          <div class="postcard-hearts">💕 💌 💕</div>
+          <h3 class="postcard-title">Sevgili DəvətnAmə</h3>
+        </div>
+        <div class="postcard-body">
+          <p class="postcard-greeting">Salam, əzizim! 🌸</p>
+          <p class="postcard-line">Seninle görüşmek istiyorum...</p>
+          <div class="postcard-detail">
+            <div class="postcard-item">
+              <span class="pci-icon">📅</span>
+              <span class="pci-val" id="pcDate">—</span>
+            </div>
+            <div class="postcard-item">
+              <span class="pci-icon">🕐</span>
+              <span class="pci-val" id="pcTime">—</span>
+            </div>
+            <div class="postcard-item">
+              <span class="pci-icon">🍽️</span>
+              <span class="pci-val" id="pcAct">—</span>
+            </div>
+          </div>
+          <p class="postcard-closing">Səni çox sevirəm! 💖<br><span class="postcard-sign">Sənin üçün xüsusi...</span></p>
+        </div>
+        <div class="postcard-footer">
+          <span>💗 &nbsp; 💗 &nbsp; 💗</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-send" id="sendBtn" onclick="sendToWhatsApp()">
+      📨 Göndər
+    </button>
+    <p class="send-note">WhatsApp-a göndərilir (+994 50 399 91 34)</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 5: SENT ========== -->
+<div class="page" id="page5">
+  <div class="page-inner">
+    <div class="sent-anim">💌</div>
+    <h2 class="section-title">Göndərildi! 🎉</h2>
+    <p class="sent-sub">Açıqcan WhatsApp-a uğurla göndərildi 💕</p>
+    <button class="btn btn-yes" onclick="resetAll()" style="margin-top:2rem;">Yenidən başla 🔄</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
