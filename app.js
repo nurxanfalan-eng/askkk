@@ -258,15 +258,16 @@ Sənin üçün xüsusi...
 
 💗 💗 💗`;
 
-const encoded = encodeURIComponent(msg);
-const url = `https://wa.me/?text=${encoded}`;
+function sendToWhatsApp() {
+  const msg = "Salam bu test mesajdır";
+  const encoded = encodeURIComponent(msg);
 
-/* WhatsApp açılır, user özü contact seçir */
-window.open(url, '_blank');
+  // Bu link kontakt seçmə rejimidir
+  const url = "https://api.whatsapp.com/send?text=" + encoded;
 
-/* Sənin page dəyişmə qalır */
-setTimeout(() => switchPage('page4', 'page5'), 600);
+  window.open(url, '_blank');
 }
+
 
 /* ===================================================
    RESET
