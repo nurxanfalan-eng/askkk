@@ -249,9 +249,9 @@ function sendToWhatsApp() {
 Selam, Fıstık! 🌸
 Seninle görüşmek istiyorum...
 
-📅 *Tarix:* ${fmt}
-🕐 *Vaxt:* ${time}
-🍽️ *Fəaliyyət:* ${act}
+📅 *Tarih:* ${fmt}
+🕐 *Zaman:* ${time}
+🍽️ *Aktivite:* ${act}
 
 Seni Çok Seviyorum! 💖
 Senin için Özel...
